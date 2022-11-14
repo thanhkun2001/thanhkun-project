@@ -17,14 +17,14 @@ const resource = {
 }
 i18n.use(initReactI18next).init({
   resources: resource,
-  lng: 'vi',
-  fallbackLng: 'vi',
+  lng: 'en',
+  fallbackLng: 'en',
   interpolation: {
     escapeValue: false,
   },
 })
 function App() {
-  var LANG = 'vi'
+  var LANG = 'en'
   const dispatch = useDispatch()
   const language = useSelector((state) => state.language.language)
   useEffect(() => {
@@ -32,7 +32,7 @@ function App() {
     if (defaultLanguage) {
       dispatch(changeLanguage(defaultLanguage))
     } else {
-      dispatch(changeLanguage(window.LANG || 'vi'))
+      dispatch(changeLanguage(window.LANG || 'en'))
     }
   }, [])
   useEffect(() => {

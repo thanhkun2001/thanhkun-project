@@ -1,7 +1,7 @@
 import { LANGUAGE_CHANGE } from "../types"
 
 const INITIAL_VALUE = {
-    language:'vi'
+    language:'en'
 }
 export default (state = INITIAL_VALUE,action) => {
     console.log(state,action)

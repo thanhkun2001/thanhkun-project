@@ -86,7 +86,7 @@ const Header = () => {
           </Dropdown.Menu>
         </Dropdown>
       </div>
-      <h1>{t('HEADER.HOME')}</h1>
+      <h1>{t('HEADER.HELLO')}</h1>
     </div>
   )
 }
