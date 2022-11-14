@@ -1,0 +1,59 @@
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.header-wrap .header-content:last-child {
+    gap: 20px;
+}
+
+.btn-toggle-theme {
+    white-space: nowrap;
+    order: 2;
+}
+
+.btn-toggle-theme label {
+    padding: 0 !important;
+}
+.ant-radio-button-input{
+    height: 0;
+    width: 0;
+    opacity: 0;
+    pointer-events:none;
+
+}
+.btn-toggle-theme label,
+.btn-toggle-theme span {
+    border: 0 !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background-color: transparent !important;
+    height: auto !important;
+    line-height: 1 !important;
+}
+.ant-radio-button-wrapper .ant-radio-button-wrapper-checked{
+    cursor: pointer;
+}
+.ant-radio-button-wrapper{
+    cursor: pointer;
+}
+.btn-toggle-theme .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)::before {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.btn-toggle-theme label:first-child {
+    padding-right: 10px !important;
+}
+
+.btn-toggle-theme label:last-child {
+    padding-left: 10px !important;
+}
+
+.btn-toggle-theme .ant-radio-button-wrapper-checked svg path {
+    fill: #5ebdeb;
+}
+.header-dropdown .dropdown-menu .dropdown-item.active {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.08) !important;
+}

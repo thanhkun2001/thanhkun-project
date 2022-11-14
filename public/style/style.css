@@ -1,0 +1,15 @@
+body {
+    background: #0a182c!important;
+    color: rgba(255, 255, 255, .7) !important;
+    overflow-x: hidden;
+}
+body.dark{
+    color: #f9fafe !important;
+    background: #051223 !important;
+    background-color: #051223 !important;
+}
+body.light {
+  color: #051223 !important;
+  background: #f9fafe !important;
+  background-color: #f9fafe !important;
+}

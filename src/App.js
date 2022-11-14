@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
-
+import i18n from 'i18next'
+import { useEffect } from 'react'
+import { initReactI18next } from 'react-i18next'
+import { useDispatch, useSelector } from 'react-redux'
+import './App.css'
+import Header from './components/Header'
+import en from './i18n/en.json'
+import vi from './i18n/vi.json'
+import { changeLanguage } from './redux/actions/languageAction'
+const resource = {
+  en: {
+    translation: en,
+  },
+  vi: {
+    translation: vi,
+  },
+}
+i18n.use(initReactI18next).init({
+  resources: resource,
+  lng: 'vi',
+  fallbackLng: 'vi',
+  interpolation: {
+    escapeValue: false,
+  },
+})
 function App() {
+  var LANG = 'vi'
+  const dispatch = useDispatch()
+  const language = useSelector((state) => state.language.language)
+  useEffect(() => {
+    const defaultLanguage = localStorage.getItem('Language')
+    if (defaultLanguage) {
+      dispatch(changeLanguage(defaultLanguage))
+    } else {
+      dispatch(changeLanguage(window.LANG || 'vi'))
+    }
+  }, [])
+  useEffect(() => {
+    if (language) {
+      i18n.use(initReactI18next).init({
+        resources: resource,
+        lng: language,
+        fallbackLng: window.LANG,
+        interpolation: {
+          escapeValue: false,
+        },
+      })
+    }
+  }, [language])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Header />
+    </>
+  )
 }
 
-export default App;
+export default App
