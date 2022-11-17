@@ -1,5 +1,5 @@
 import { Radio } from 'antd'
-
+import {Link} from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import { Dropdown } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
@@ -87,6 +87,8 @@ const Header = () => {
         </Dropdown>
       </div>
       <h1>{t('HEADER.HELLO')}</h1>
+      <Link to='/login'>Login</Link>
+      <Link to='/register'>Register</Link>
     </div>
   )
 }
