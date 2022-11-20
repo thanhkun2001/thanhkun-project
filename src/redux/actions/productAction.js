@@ -16,6 +16,7 @@ export const getAllProduct = () => {
     }
 }
 export const getProductDetails = (id) => {
+    debugger
     return async dispatch => {
         try {
             const res = await ProductApi.getDetails(id)

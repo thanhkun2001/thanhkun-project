@@ -12,7 +12,7 @@ const ProductDetail = () => {
   const dispatch = useDispatch()
   const [nameProduct, setNameProduct] = useState('')
   const [originalPrice, setOriginalPrice] = useState('')
-  const listProductDetail = useSelector((state) => state.product.listProductDetails)
+  const listProductDetail = useSelector((state) => console.log(state.product.listProductDetails))
   const editMode = FORM_MODE.EDIT
   const viewMode = FORM_MODE.VIEW
   useEffect(() => {

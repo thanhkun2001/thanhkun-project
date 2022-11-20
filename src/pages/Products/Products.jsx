@@ -12,8 +12,10 @@ const Products = () => {
   const listProduct = useSelector((state) => state.product.listProduct)
   useEffect(() => {
     dispatch(getAllProduct())
-    setDataSource(listProduct)
   }, [])
+  useEffect(() => {
+    setDataSource(listProduct)
+  }, [listProduct])
   const onSearch = (value) => console.log(value)
   const handleView = (e, id) => {
     if (e) e.preventDefault()
@@ -77,11 +79,13 @@ const Products = () => {
             {item.id}
           </button>
         ))} */}
-      <div className='mb-5'>
+      <div className="mb-5">
         <Search placeholder="input search text" onSearch={onSearch} enterButton />
       </div>
       <div>
-        <Button onClick={() => handleAdd()} type='primary' style={{float:'right'}}>Add</Button>
+        <Button onClick={() => handleAdd()} type="primary" style={{ float: 'right' }}>
+          Add
+        </Button>
       </div>
       <Table
         rowKey={(res) => res.id}
